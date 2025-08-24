@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink - Connecting Farmers to Consumers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="page active">
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+
+        <div class="welcome-container">
+            <div class="logo">🌾 FarmLink</div>
+            <p class="tagline">Connecting Farmers Directly to Consumers with Instant Microfinance</p>
+            
+            <button id="welcomeBtn" class="welcome-btn">
+                Welcome to FarmLink
+            </button>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚜</div>
+                    <div class="feature-text">Direct Farm Connection</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">Instant Microfinance</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-text">Community Support</div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button onclick="showPage('signinPage')" class="nav-btn primary">Sign In</button>
+                <button onclick="showPage('dashboardPage')" class="nav-btn secondary">Explore Dashboard</button>
+            </div>
+        </div>
+        
+        <div id="successMessage" class="success-message">
+            🎉 Welcome to the Future of Agriculture!
+        </div>
+    </div>
+
+    <!-- Sign In Page -->
+    <div id="signinPage" class="page">
+        <div class="signin-container">
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                </select>
+            </div>
+
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmLink</span>
+            </div>
+            
+            <h1 id="signinTitle" class="signin-title">Welcome Back</h1>
+            <p id="signinSubtitle" class="signin-subtitle">Login to your decentralized farm account</p>
+            
+            <div id="messageArea" class="message hidden"></div>
+            
+            <form id="signinForm">
+                <div class="form-group">
+                    <label id="emailLabel" for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="petra.butten@farmlink.com" required />
+                    <div id="emailError" class="error-message hidden"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label id="passwordLabel" for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your secure password" required />
+                    <div id="passwordError" class="error-message hidden"></div>
+                </div>
+                
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember" />
+                    <label id="rememberLabel" for="remember">Remember me for 30 days</label>
+                </div>
+                
+                <button type="submit" id="loginButton" class="signin-button">Login</button>
+                <button type="button" id="altSigninButton" class="signin-button-alt">Sign up</button>
+            </form>
+            
+            <a href="#" id="forgotPasswordLink" class="forgot-password">Forgot your password?</a>
+            
+            <div class="divider"><span>or</span></div>
+            
+            <button id="walletButton" class="wallet-button">
+                <span class="wallet-icon">💳</span>
+                <span id="walletButtonText">Connect with Petra Wallet</span>
+            </button>
+            
+            <p class="signup-link">
+                <span id="signupText">New to FarmLink?</span> <a href="#" id="signupLink">Create an account</a>
+            </p>
+
+            <div class="back-home">
+                <a href="#" onclick="showPage('welcomePage')">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">🌾 FarmLink</div>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('welcomePage')">Home</a>
+                    <a href="#" onclick="showPage('farmerPage')">Farmer Portal</a>
+                    <a href="#" onclick="showPage('consumerPage')">Marketplace</a>
+                    <a href="#" onclick="showPage('signinPage')">Sign In</a>
+                </div>
+                <div class="user-profile" onclick="handleProfileClick()">
+                    <span>Welcome, User!</span>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <section class="hero">
+                <h1>Transform Agriculture Together</h1>
+                <p>Join thousands of farmers and consumers building a transparent, fair agricultural ecosystem</p>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="1247">0</div>
+                    <div class="stat-label">Active Farmers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="3892">0</div>
+                    <div class="stat-label">Happy Consumers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="856">0</div>
+                    <div class="stat-label">Products Available</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="245">0</div>
+                    <div class="stat-label">Loans Funded Today</div>
+                </div>
+            </section>
+
+            <section class="role-selection">
+                <h2 class="section-title">Choose Your Journey</h2>
+                <div class="roles">
+                    <div class="role-card" onclick="showPage('farmerPage')">
+                        <span class="role-icon">🚜</span>
+                        <h3 class="role-title">I'm a Farmer</h3>
+                        <p class="role-description">Sell your produce directly to consumers, access instant microfinance, and build your farming business</p>
+                        <ul class="role-features">
+                            <li>📝 List your crops and produce</li>
+                            <li>💰 Get instant microloans</li>
+                            <li>📊 Track your sales and profits</li>
+                            <li>🤝 Connect directly with buyers</li>
+                            <li>📱 Manage everything on mobile</li>
+                        </ul>
+                        <button class="role-btn">Start Farming Journey</button>
+                    </div>
+
+                    <div class="role-card" onclick="showPage('consumerPage')">
+                        <span class="role-icon">🛒</span>
+                        <h3 class="role-title">I'm a Consumer</h3>
+                        <p class="role-description">Buy fresh produce directly from farmers, support rural communities, and earn returns through lending</p>
+                        <ul class="role-features">
+                            <li>🥕 Buy fresh, traceable produce</li>
+                            <li>📅 Pre-order seasonal crops</li>
+                            <li>🏦 Lend to farmers and earn returns</li>
+                            <li>📈 Track your impact</li>
+                            <li>🚚 Get home delivery</li>
+                        </ul>
+                        <button class="role-btn">Start Shopping Journey</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <div class="activity-header">
+                    <h3 class="activity-title">Recent Platform Activity</h3>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+                <div class="activity-list" id="activityList"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Farmer Dashboard Page -->
+    <div id="farmerPage" class="page">
+        <header>
+            <nav>
+                <div class="logo">🌾 FarmLink</div>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('welcomePage')">Home</a>
+                    <a href="#" onclick="showPage('dashboardPage')">Dashboard</a>
+                    <a href="#" onclick="showPage('consumerPage')">Marketplace</a>
+                    <a href="#" onclick="showPage('signinPage')">Sign Out</a>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">👨🌾</div>
+                    <div class="user-details">
+                        <h3>Ramesh Patil</h3>
+                        <p>Nashik, Maharashtra • Verified Farmer</p>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="farmer-container">
+            <main>
+                <section class="welcome-section">
+                    <h1 class="welcome-title">Welcome Back, Ramesh Patil!</h1>
+                    <p class="welcome-subtitle">Manage your farm, track your earnings, and grow your agricultural business</p>
+                    <div class="weather-info">
+                        <span class="weather-icon">☀️</span>
+                        <div>
+                            <strong>Today's Weather</strong><br>
+                            28°C, Sunny - Perfect for harvesting!
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-icon">💰</span>
+                        <div class="stat-value" data-target="45250">0</div>
+                        <div class="stat-label">Total Earnings (₹)</div>
+                        <div class="stat-change positive">+12% this month</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">📦</span>
+                        <div class="stat-value" data-target="24">0</div>
+                        <div class="stat-label">Active Products</div>
+                        <div class="stat-change positive">+3 new listings</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🤝</span>
+                        <div class="stat-value" data-target="89">0</div>
+                        <div class="stat-label">Orders Fulfilled</div>
+                        <div class="stat-change positive">+8 this week</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🏦</span>
+                        <div class="stat-value" data-target="15000">0</div>
+                        <div class="stat-label">Active Loan (₹)</div>
+                        <div class="stat-change negative">Due in 45 days</div>
+                    </div>
+                </section>
+
+                <section class="products-section">
+                    <div class="products-header">
+                        <h2 class="products-title">🌾 My Products</h2>
+                        <button class="add-product-btn" onclick="openModal()">➕ Add New Product</button>
+                    </div>
+                    <div class="products-grid" id="productsGrid"></div>
+                </section>
+            </main>
+
+            <aside>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">⚡ Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="openModal()">📦 List New Product</button>
+                        <button class="quick-action-btn" onclick="applyLoan()">💰 Apply for Loan</button>
+                        <button class="quick-action-btn" onclick="viewAnalytics()">📊 View Analytics</button>
+                        <button class="quick-action-btn" onclick="updateProfile()">👤 Update Profile</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">📋 Recent Orders</h3>
+                    <div>
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-name">Wheat</span>
+                                <span class="order-price">₹1050</span>
+                            </div>
+                            <div class="order-details">30kg • Mumbai • Delivered</div>
+                        </div>
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-name">Lentil</span>
+                                <span class="order-price">₹800</span>
+                            </div>
+                            <div class="order-details">20kg • Pune • In Transit</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Consumer Marketplace Page -->
+    <div id="consumerPage" class="page">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">🛒 FarmLink Consumer</div>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('welcomePage')">Home</a>
+                    <a href="#" onclick="showPage('dashboardPage')">Dashboard</a>
+                    <a href="#" onclick="showPage('farmerPage')">Farmer Portal</a>
+                    <a href="#" onclick="showPage('signinPage')">Sign In</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search fresh produce..." id="searchInput">
+                    <button class="search-btn" onclick="searchProducts()">🔍</button>
+                </div>
+                <div class="consumer-info">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒
+                        <span class="cart-count" id="cartCount">3</span>
+                    </div>
+                    <div class="user-info">
+                        <h3>Priya Sharma</h3>
+                        <p>Mumbai, Maharashtra</p>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="consumer-container">
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <div class="filter-title">📂 Categories</div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="vegetables" checked>
+                            <label for="vegetables">🥬 Vegetables</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="fruits">
+                            <label for="fruits">🍎 Fruits</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="grains">
+                            <label for="grains">🌾 Grains</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+            </aside>
+
+            <main class="main-content">
+                <section class="hero-banner">
+                    <h1 class="hero-title">Fresh from Farm to Your Table</h1>
+                    <p class="hero-subtitle">Connect directly with local farmers and get the freshest produce</p>
+                </section>
+
+                <section class="products-section">
+                    <div class="products-header">
+                        <h2 class="products-title">Fresh Produce Available Now</h2>
+                    </div>
+                    <div class="products-grid" id="consumerProductsGrid"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title">Add New Product</h2>
+            <form onsubmit="addProduct(event)">
+                <div class="form-group">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" class="form-input" id="productName" required placeholder="e.g., Organic Wheat">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Price per kg (₹)</label>
+                    <input type="number" class="form-input" id="productPrice" required placeholder="e.g., 25">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Available Quantity (kg)</label>
+                    <input type="number" class="form-input" id="productQuantity" required placeholder="e.g., 150">
+                </div>
+                <button type="submit" class="submit-btn">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
