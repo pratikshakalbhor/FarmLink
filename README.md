@@ -47,6 +47,6 @@ Our vision is to transform the agricultural supply chain by creating a transpare
 
 ```
 **Devnet:0x2fd460ddd764d9836e554cf544708ba1ee236969d145593a1ebc260a288386e7
-<img width="1907" height="961" alt="image" src="https://github.com/user-attachments/assets/320486a6-0aa9-4e62-b309-7a0f866d5087" />
 
 ```
+<img width="1907" height="961" alt="image" src="https://github.com/user-attachments/assets/320486a6-0aa9-4e62-b309-7a0f866d5087" />
