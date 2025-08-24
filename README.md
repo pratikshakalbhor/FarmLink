@@ -1,62 +1,52 @@
-Rice Supply Chain Smart Contract
-Description
-The Rice Supply Chain Smart Contract is a blockchain-based solution built on the Move programming language that enables transparent and traceable management of rice batches throughout the agricultural supply chain. This smart contract allows farmers to create rice batches and securely transfer ownership to distributors, retailers, and other stakeholders while maintaining complete traceability from farm to consumer.
-The contract implements a simple yet effective system for tracking rice batches with unique identifiers, quantity measurements, origin farm information, and transfer history. Each rice batch is represented as a digital asset that can be safely transferred between verified parties while preserving the complete chain of custody.
-Vision
-Our vision is to revolutionize the agricultural supply chain by leveraging blockchain technology to create a transparent, secure, and efficient system for tracking food products from farm to table. We aim to:
+# Rice Supply Chain Tracking Smart Contract
 
-Enhance Food Safety: Provide complete traceability of rice batches to quickly identify and isolate contaminated products
-Build Consumer Trust: Enable consumers to verify the origin and journey of their food products
-Empower Farmers: Give farmers direct access to supply chain data and fair compensation tracking
-Reduce Food Fraud: Create an immutable record that prevents counterfeit products from entering the supply chain
-Support Sustainability: Enable tracking of sustainable farming practices and environmental impact
-Facilitate Compliance: Help agricultural businesses meet regulatory requirements for food traceability
+## Description
 
-Future Scope
-The Rice Supply Chain Smart Contract serves as a foundation for a comprehensive agricultural blockchain ecosystem. Future enhancements and expansions include:
-Technical Enhancements
+The Rice Supply Chain Tracking smart contract is a blockchain-based solution built on the Aptos network that provides transparent, immutable tracking of rice batches from farm to consumer. This decentralized system ensures food safety, authenticity, and traceability throughout the entire supply chain process.
 
-Quality Metrics Integration: Add fields for tracking quality scores, testing results, and certifications
-IoT Sensor Integration: Connect with temperature, humidity, and GPS sensors for real-time monitoring
-Multi-Crop Support: Extend the contract to support wheat, corn, and other agricultural products
-Batch Splitting/Merging: Enable division of large batches and combination of smaller ones
-Smart Contract Automation: Implement automatic transfers based on predefined conditions
+The contract enables farmers to create rice batches with unique identifiers and allows secure transfer of ownership between supply chain participants including distributors, processors, retailers, and consumers. Each batch maintains complete traceability data including origin farm, current owner, quantity, and transfer history, creating an unalterable record that enhances food safety and reduces fraud.
 
-Business Features
+Key features include batch creation with unique identifiers, secure ownership transfers with permission verification, complete traceability from farm to table, and immutable transfer count tracking for supply chain transparency.
 
-Payment Integration: Built-in payment systems with escrow functionality
-Insurance Claims: Automated insurance processing based on supply chain events
-Carbon Credit Tracking: Monitor and trade carbon credits associated with sustainable farming
-Certification Management: Digital certificates for organic, fair trade, and other standards
-Price Discovery: Dynamic pricing based on quality, origin, and market conditions
+## Vision
 
-Ecosystem Expansion
+Our vision is to transform the agricultural supply chain by creating a transparent, trustworthy, and efficient rice tracking ecosystem that:
 
-Mobile Applications: User-friendly apps for farmers, distributors, and consumers
-Analytics Dashboard: Real-time insights and reporting for supply chain optimization
-API Development: Integration capabilities with existing ERP and inventory management systems
-Cross-Chain Compatibility: Interoperability with other blockchain networks
-Regulatory Integration: Compliance tools for different international food safety standards
+- **Ensures Food Safety**: Complete traceability from farm to consumer table for rapid contamination source identification
+- **Prevents Food Fraud**: Immutable blockchain records eliminate counterfeit rice and false origin claims
+- **Empowers Consumers**: Transparent access to rice origin, journey, and quality information
+- **Supports Farmers**: Direct connection to consumers with verified organic and premium rice certification
+- **Reduces Waste**: Efficient supply chain management through real-time batch tracking and inventory management
+- **Builds Trust**: Transparent, verifiable supply chain that enhances confidence in food products
 
-Global Impact
+## Future Scope
 
-Developing Markets: Tailored solutions for emerging agricultural economies
-Cooperative Support: Features specifically designed for farming cooperatives
-Export/Import Tracking: International trade facilitation with customs integration
-Disaster Response: Supply chain resilience and emergency food distribution
+### Short-term Enhancements
+- **Quality Metrics**: Add rice quality parameters (moisture content, purity, grade classification)
+- **Batch Splitting**: Enable division of large batches into smaller quantities for different buyers
+- **Expiration Tracking**: Implement harvest date and expiration date monitoring for freshness
+- **Location Tracking**: Add GPS coordinates for each transfer point in the supply chain
 
-Contract Address
-**Devnet : 0xf1a69a52ea8f2036ec236d67a5a5bbbe479498385522c598b732b8957e6fcd12
-![Uploading image.png…]()
+### Medium-term Developments
+- **IoT Integration**: Connect with sensors for real-time temperature, humidity, and storage condition monitoring
+- **Digital Certificates**: Issue blockchain-based organic, fair-trade, and quality certifications
+- **Payment Integration**: Automated payments upon successful batch transfers using smart contracts
+- **Mobile Application**: User-friendly mobile apps for farmers, distributors, and consumers
+- **Multi-crop Support**: Expand to track wheat, corn, and other agricultural products
 
-Testnet Address: 0xf1a69a52ea8f2036ec236d67a5a5bbbe479498385522c598b732b8957e6fcd12
-Mainnet Address: 
-Compiler Version: Move 1.0
-Last Updated: [Deployment Date]
+### Long-term Vision
+- **AI-powered Analytics**: Predictive analytics for crop yield, demand forecasting, and price optimization
+- **Global Marketplace**: Decentralized platform connecting farmers directly with international buyers
+- **Carbon Footprint Tracking**: Monitor and reduce environmental impact throughout the supply chain
+- **Insurance Integration**: Automated crop insurance claims based on blockchain-verified data
+- **Regulatory Compliance**: Integration with government food safety and import/export systems
+- **Supply Chain Financing**: Blockchain-based lending and financing solutions for farmers and distributors
+- **Consumer Rewards**: Loyalty programs and rewards for consumers choosing traceable, sustainable rice products
 
-How to Interact
-bash# Create a new rice batch (farmer)
-aptos move run --function-id [CONTRACT_ADDRESS]::RiceSupplyChainSimple::create_rice_batch
+## Contract Address
 
-# Transfer rice batch to new owner
-aptos move run --function-id [CONTRACT_ADDRESS]::RiceSupplyChainSimple::transfer_ric# FarmLink
+```
+**Devnet:0x2fd460ddd764d9836e554cf544708ba1ee236969d145593a1ebc260a288386e7
+<img width="1907" height="961" alt="image" src="https://github.com/user-attachments/assets/320486a6-0aa9-4e62-b309-7a0f866d5087" />
+
+```
